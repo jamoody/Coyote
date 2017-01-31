@@ -1,0 +1,235 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Desktop Stylesheet
+
+General Styles that apply to all pages and all breakpoints unless over-ridden by another breakpoint partial.
+
+IF YOUR RULE APPLIES TO MORE THAN ONE PAGE IT GOES HERE.
+
+IF YOUR RULE ONLY APPLIES TO ONE PAGE, PUT IT IN THE PAGE SPECIFIC PARTIAL.
+
+******************************************************************/
+
+/*********************
+GENERAL STYLES
+*********************/
+
+body {
+	font-family: $body-font;
+	font-size: 100%;
+	line-height: 1.5;
+	color: $body-text-color;
+	background-color: $background-color;
+  	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+}
+
+
+
+/********************************************************************
+GUTTERS
+*********************************************************************/
+
+.gutters {
+	max-width: 1200px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+/*********************
+LINK STYLES
+*********************/
+a {
+	text-decoration: none;
+}
+
+/****************************************************************
+PARAGRAPH STYLES
+******************************************************************/
+p {
+  margin: 0;	
+  -ms-word-wrap: break-word;
+  word-break: break-word; //non-standart css for webkit
+  word-wrap: break-word;
+  // cleaning up the ragged lines and breaks
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+          hyphens: auto;
+  // sets a minimum number of characters before and after the break
+  -webkit-hyphenate-before: 2;
+   -webkit-hyphenate-after: 3;
+           hyphenate-lines: 3;
+  // enabling fancy ligatures when available
+  -webkit-font-feature-settings: "liga", "dlig";
+   -moz-font-feature-settings: "liga=1, dlig=1";
+      -ms-font-feature-settings: "liga", "dlig";
+       -o-font-feature-settings: "liga", "dlig";
+          font-feature-settings: "liga", "dlig";
+}
+
+
+/******************************************************************
+HEADING STYLES
+******************************************************************/
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+	text-rendering: optimizelegibility;
+	font-weight: 500;
+	/*
+	if you're going to use webfonts, be sure to check your weights
+	http://css-tricks.com/watch-your-font-weight/
+	*/
+}
+
+h1, .h1 {
+	font-size: 2.5em;
+	line-height: 1.333em;
+}
+
+h2, .h2 {
+	font-size: 1.75em;
+	line-height: 1.4em;
+}
+
+h3, .h3 {
+	font-size: 1.125em;
+}
+
+h4, .h4 {
+	font-size: 1.1em;
+	font-weight: 700;
+}
+
+h5, .h5 {
+	font-size: 0.846em;
+	line-height: 2.09em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+/*********************
+HEADER STYLES
+*********************/
+
+
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+/*
+all navs have a .nav class applied via
+the wp_menu function; this is so we can
+easily write one group of styles for
+the navs on the site so our css is cleaner
+and more scalable.
+*/
+
+.nav {
+	border-bottom: 0;
+	margin: 0;
+
+	li {
+
+		a {
+			display: block;
+			padding: 0.75em;
+		}
+	} 
+} 
+
+
+
+/*********************
+SIDEBARS
+*********************/
+
+/*********************
+FOOTER STYLES
+*********************/
+
+.footer {
+	clear: both;
+	background-color: $footer-background-color;
+	color: $light-body-text;
+}
+
+
+
+/******************************************************************
+PAGINATION STYLES
+******************************************************************/
+
+.pagination,
+.wp-prev-next {
+	margin: 1.5em 0;
+}
+	.pagination{
+    text-align: center;
+
+    ul {
+      display: inline-block;
+      background-color: $background-color;
+      white-space: nowrap;
+      padding: 0;
+      clear: both;
+      border-radius: 3px;
+    }
+
+    li {
+      padding: 0;
+      margin: 0;
+      float: left;
+      display: inline;
+      overflow: hidden;
+      border-right: 1px solid $gray;
+    }
+
+    a, span {
+      margin: 0;
+      text-decoration: none;
+      padding: 0;
+      line-height: 1em;
+      font-size: 1em;
+      font-weight: normal;
+      padding: 0.75em;
+      min-width: 1em;
+      display: block;
+      color: $link-color;
+
+      &:hover, &:focus {
+      	background-color: $black;
+      	color: $link-hover;
+      }
+    }
+
+    .current{
+    	cursor: default;
+    	color: $body-text-color;
+
+    	&:hover, &:focus {
+    		background-color: $background-color;
+    		color: $body-text-color;
+    	}
+    }
+
+  } /* end .coyote_page_navi */
+
+	/* fallback previous & next links */
+	.wp-prev-next {
+
+		ul {}
+
+		.prev-link {
+			float: left;
+		}
+
+		.next-link {
+			float: right;
+		}
+
+	} /* end .wp-prev-next */
+
+

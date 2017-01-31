@@ -1,0 +1,58 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Sass Functions
+
+Functions do what functions ought to do. They take an input and provide an output.
+Think of these like mixins that take a parameter.  Write them that way too.
+If you want to automate something, ask yourself, 'would it be helpful for this tool to take a parameter?'
+If the answer is yes, write it as a function. If not, then mix it in, baby.
+
+For more info on functions, go here:
+http://sass-lang.com/documentation/Sass/Script/Functions.html
+
+******************************************************************/
+
+
+/*********************
+COLOR FUNCTIONS
+These are helpful when you're working
+with shadows and such things. It's essentially
+a quicker way to write RGBA.
+
+Example:
+box-shadow: 0 0 4px black(0.3);
+compiles to:
+box-shadow: 0 0 4px rgba(0,0,0,0.3);
+*********************/
+
+// black
+@function black($opacity) {
+    @return rgba(0,0,0,$opacity);
+}
+
+// white
+@function white($opacity) {
+    @return rgba(255,255,255,$opacity);
+}
+
+
+/*********************
+RESPONSIVE HELPER FUNCTION
+
+
+Example:
+width: cp(650px, 1000px);
+or
+width: calc-percent(650px, 1000px);
+both compile to:
+width: 65%;
+*********************/
+
+@function calc-percent($target, $container) {
+  @return ($target / $container) * 100%;
+}
+@function cp($target, $container) {
+  @return calc-percent($target, $container);
+}

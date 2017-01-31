@@ -1,0 +1,122 @@
+DISCLAIMER:
+
+This is a 'cheat-sheet' for the Coyote tools templates. This document assumes you already know what you're doing with the theme. For full instructions go read the instructions.
+
+*************************************************************************************************
+GUTTERS
+*************************************************************************************************
+
+Apply gutters it to any element by adding the class ".gutters". To adjust the parameters of .gutters, go tweak the css in the GUTTERS section of _all.scss
+
+
+************************************************************************************************
+008. GRIDS
+************************************************************************************************
+
+<div class='grid-container four-column tablet-two-column mobile-single-column'>
+
+	<div class='grid-item'>
+		<p>gremlin</p>
+	</div>
+
+	<div class='grid-item'>
+		<p>gremlin</p>
+	</div>
+
+	<div class='grid-item'>
+		<p>gremlin</p>
+	</div>
+
+	<div class='grid-item'>
+		<p>gremlin</p>
+	</div>
+</div>
+
+Column options: Full size 2-12, Tablet 1-2, Mobile 1-2.
+
+*************************************************************************************************
+009. TABS
+*************************************************************************************************
+
+<div class='horizontal-tabs'>
+
+	<div class='tab-title-container'>
+
+		<div class='tab'>
+			<p>Tab Title</p>
+		</div>
+
+		<div class='tab'>
+			<p>Tab Title</p>
+		</div>
+
+		<div class='tab'>
+			<p>Tab Title</p>
+		</div>
+
+		<div class='tab'>
+			<p>Tab Title</p>
+		</div>
+
+	</div>
+
+	<div class='tab-content-window'>
+
+		<div class='tab-content'>
+			<p>Tab Content 1</p>
+		</div>
+
+		<div class='tab-content'>
+			<p>Tab Content 2</p>
+		</div>
+
+		<div class='tab-content'>
+			<p>Tab Content 3</p>
+		</div>
+
+		<div class='tab-content'>
+			<p>Tab Content 4</p>
+		</div>
+		
+	</div>
+
+</div>
+
+If you want to make vertical tabs, just switch the class "horizontal-tabs" on the outer container for the class "vertical-tabs". 
+
+*************************************************************************************************
+0010. ACCORDIONS
+*************************************************************************************************
+
+<div class='accordion-container'>
+
+	<div class='accordion-section'>
+		<p>Title</p>
+		<div class='accordion-content'>
+			<p>Content</p>
+		</div>
+	</div>
+
+	<div class='accordion-section'>
+		<p>Title</p>
+		<div class='accordion-content'>
+			<p>Content</p>
+		</div>
+	</div>
+
+	<div class='accordion-section'>
+		<p>Title</p>
+		<div class='accordion-content'>
+			<p>Content</p>
+		</div>
+	</div>
+
+</div>
+
+
+*************************************************************************************************
+0011. PARALLAX
+*************************************************************************************************
+
+To use your parallax feature just apply the class "parallax-top" to your top layer, "parallax-slow" to your slower moving background layer, and "parallax-fast" to your faster moving background layer.
+

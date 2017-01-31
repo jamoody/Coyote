@@ -1,0 +1,370 @@
+Hello!
+
+If you're reading this, you just downloaded Coyote and want to know how to use it.  Good for you.  We're here to help.  Somewhat.  Seriously read this stuff though.  It will really help.  We've gone out of our way to provide actual human, clear, readable documentation written by actual humans for other humans. None of that developer junk that assumes you already know how to do everything and glosses over all of the important steps.  We're devs too, and it drives us crazy. 
+
+"How do I register a new sidebar?" 
+
+"Oh, just enter all of the parameters in the place, and then call the thing and enqueue that other thing upon the altar of Ghroth."
+
+"Which paramters...and...wait. What was that last part?"
+
+"The Altar of Groth?"
+
+"Yeah. Yeah, that part."
+
+"*sigh* if you don't know where the Alter of Ghroth is, you probably shouldn't be using a sidebar."
+
+No more of that nonsense.  So, read on and good luck.
+
+************************************************************************************************
+TABLE OF CONTENTS
+************************************************************************************************
+Pro-tip: control-f the number of the section and you will jump there. They're unique!
+
+001.	INTRODUCTION
+002.	INSTALLATION
+003.	BUILDING A PAGE
+004.	STYLING INTRO
+005.	SASS SCRUCTURE
+006.	TOOLS
+007.	GUTTERS
+008.	GRIDS
+009.	TABS
+0010.	ACCORDIONS
+0011.	PARALLAX
+0012.	JAVA TOOLS
+0013.	CUSTOM JAVA
+0014.	SUPPORT
+0015.	CREDITS/COPYRIGHT
+
+**************************************************************************************************
+001. INTRODUCTION
+**************************************************************************************************
+
+Welcome to Coyote 1.0 AKA the Sleekest Theme in the Universe!
+
+Our goal with Coyote was to create the most streamlined, bare-bones, sleek, Wordpress theme possible.  We are web devs who build custom sites for a living.  No out of the box theme implementations.  Everything custom built from the ground up.  We quickly realized that every Wordpress theme out there caused more trouble than it was worth.  We searched far and wide for a "bare-bones" theme that just gave us a blank canvas upon which to make our client's dreams and nightmares come true. What we found was a WONDERFUL theme called Bones. It was created by who we can only assume is quite litereally the best human in the universe: Eddie Machado. Please go pay respects to him and his amazing theme at: http://themble.com/bones/
+
+But as it turned out, even Bones was not...bonesy enough. So, we went ahead and ripped 80% of its guts out to create Coyote. What's left is the barest, bonsiest, slickest, simplest, sleekest, most dev-friendly theme out there.  Perfect for folks who don't want anything messing with their own code.  If that's NOT you, and you rely on a lot of theme styling, features and plugins...well...you might wanna try something else.  That being said, you might wind up liking the freedom a blank slate provides!
+
+Other pertinant introduction type stuff:
+
+REQUIREMENTS: FTP access to your site and a SASS compiler. You need both of these to work with this theme. If you're not set up to FTP directly to your site, do an about face and head back to known waters. I will not be covering how to set up FTP if you don't already know.  However, I will walk you through setting up a SASS compiler, so you're good there.
+
+SUPPORT: coyotetheme@gmail.com DISCLAIMER: We simply don't have the bandwith to actively support Coyote. Feel free to email, but you might not hear back. 
+
+COPYRIGHT: Shmeh. She's all yours.
+
+One final shout out to Bones and Eddie Machado.  Seriously.  The framework and core functionality is all him. Amazing stuff, and very cool of him to give it away for free. Send him flowers. Or pizza. Something.
+
+**********************************************************************************************
+002. INSTALLATION AND BASIC SETUP
+**********************************************************************************************
+
+Hookay here we go.  If you already know how to install a Wordpress theme, replace the favicons and the screenshot, then you can skip this section.
+
+If you were the person who *thought* they knew how to do that, but didn't, and just broke their site, welcome back!
+
+First things first.  This is Wordpress theme.  So yer site better be on Wordpress.  Installation is pretty simple. Riiiiiiight next to this instruction file is a folder called "Coyote." FTP that entire folder into your site's "themes" folder. It should be in a folder called "wp-content." Done! You just installed a theme.
+
+Now, open up yer favorite browser (*cough* Blisk *cough*) and head over to your site's backend (http://yoursite.com/wp-admin/). On the left side bar you'll see an option called "Appearance." Hover over that and select the option "Themes." You should see a bunch of tiles, one for each of your installed themes. One of them should have a picture of a super cute coyote lady giving you the peace sign. Hover over her adorable face, and click the "Activate" button below her.  You're now officially running the world's coolest theme.  Ice cold.  
+
+Next I'm gonna tell you how to change that screenshot and switch up the favicons.  The favicons are the little image that shows up on browser tabs, btw.
+
+Except I'm not going to tell you how to change the screenshot. Because you should never change her.  I'm serious.  Figure that one out on your own.
+
+To switch the favicons, first head over to a favicon generator.  Just google favicon generator.  There are a bunch.  They all do the same thing.  It'll have you upload an image, and will spit out your favicons. In the "Coyote" folder there are two files: "favicon.ico" and "favicon.png."  Rename the .ico file the generator spit out to "favicon.ico" and replace the .ico file in the coyote folder with your new file.  In case this wasn't clear, your NEW .ico file needs to be named "favicon.ico" just like the old one was.  Now do the same thing with the favicon.png file. As in change the name of the .png file your generator spit out to favicon.png and replace the one in the coyote folder.  Done.
+
+You better not have changed that screenshot though.
+
+********************************************************************************************
+003. BUILDING A PAGE
+********************************************************************************************
+
+Huzzah. You installed a theme and customized it. A bit. Pat yourself on the back. Take a shot. Whatever makes you happy. 
+
+Now it is time to get down to real business and make a page. The best way to do this to allow for maximun flexibility and control is to use the Wordpress template feature. With this, you can create an infinite number of php templates and apply them as you see fit to any pages you want on the Wordpress backend. So lets take a look at the Coyote base template. Go ahead and open up the file "page_coyote.php" in the "coyote" folder.  Here you see the basic php/html structure for all of your pages.  
+
+First you've got the Wordpress call for the header.  Leave that be. You need it.  It has a lot of important stuff in it.  If you don't want to see a header on your page, use css to style it away, but leave that call in.
+
+There's one wrapper around the entire page.  It is has the class "total-page-container."  It contains the total page.  You can see I'm trying to be very literal with my naming here.  Trying to get away from everything having vague names like "wrapper" and "inner container."  Not helpful.  SO, the "total-page-container" contains the header and body.
+
+Next, I've given you three wrappers around your main content area.  Because three is enough.  Stop it with all of the wrappers. As you can see they have the class names "top-wrapper", "middle-wrapper", and "bottom-wrapper." And that's exactly what they are. You should be able to do most any positioning you need with those three, but if for some reason you need MORE wrappers around the content area, stick 'em up there with the rest.
+
+By default the guttering system is applied to the middle wrapper with the class "gutters", but more on that later.
+
+Next, you see the "loop": "<?php if (have_posts()) : while (have_posts()) : the_post(); ?> "  This little piece of code will loop through any posts that you call after it and puke them out on your page.  I might add a section on writing post loops, but for now, google that.
+
+Under that we have the call for "the_content();".  This little function pukes out whatever is in the "content" section from the backend Wordpress page editor.  In other words, if you go to your dashboard page section, and edit a specific page, you'll see a big white text box that you can type in.  That's the "content" and anything you put there gets built on your page by that little the_content(); function.  Personally, I never use that because I'm not heathen. Feel free to rip it out. I left it in the default template because clients tend to like to play with that text box and feel like they're helping.
+
+Next we have the closing tags for the post loop.
+
+After that, the function that calls your sidebar. Right now its commented out so the sidebar doesn't automatically appear.  Just uncomment this for pages you want a sidebar.  More on populating your sidebars later.
+
+Some more closing tags blah blah blah and finally, the function that call the footer.  Like the header this has a bunch of important stuff in it, so leave it be.  If you don't want to see the footer, css it to oblivion somewhere else.
+
+Ok, so now that you know your way around the template you probably want to add some...stuff. First and most important MAKE A COPY OF THIS FILE.  Let me be super clear: DO NOT EDIT OR OVERWITE THIS FILE. It is your basic template from which all your other templates are born.  It is the mother template.  It is Gaia.  You're gonna want to keep it.  SO MAKE A COPY. Rename the copy "page_yourname.php" where "yourname" is what you want the template to be called. You have to follow that exact file naming convention for Wordpress to recognize it as a template, so don't be hero. It should reside in the exact same folder as the mother template.
+
+Next, check out the comments on the top of your new copy. It'll say "Template Name: Coyote."  Change the word "Coyote" to whatever you want your template to be called.  This is the name that will show up on the Wordpress backend when you assign this template to pages.  So ya gotta do it or Wordpress will throw a fit and poop in your sink.
+
+Then you basically just plop your php/html where ever you want your stuff to show up.  As mentioned above, posts that you want to loop go right under that loop code. Content from the backend you don't need to do anything. Put that in ON the backend and it will show up right where that the_content() function is. You're *probably* going to want to write all your custom php/html right inside the bottom-wrapper div.  But whatever.  Knock yourself out.  I'm not judging you. 
+
+Save your shiny new template, and FTP it up to your site. Open up your browser, and loadup your site's Wordpress backend.  On the left sidebar there is a section calle "Pages." Hover over that, and select the "Add New" option. It will create a new page for you and immediately bring you to the page editing screen.  Name your page (although remember that once you name it, it will be harder to kill), and check out your options on the right side of the screen.  You *should* see a box called "Page Attribues." Expand it if it is not already, and about halfway down that back you should see a dropdown box called "Template." Look in that dropdown and you *should* see an option for the template you just created.  If not, you screwed something up, and you should feel bad.  Maybe you're not cut out for this.  Maybe your dad was right. About everything. I kid, I kid. My instructions were probably just terrible.  If you don't see your template, go back and read this over or Bing someone else's instructions.
+
+If however, you DO see your template, select it to apply that template to this page you just created.  What that does, is apply all the php/html you just made to THIS page. Publish the page with the button in the top right, navigate to your new page in a browser (new url is on the top of the editing page) and you should see all of the html you put in the template. How cool is that.  Hopefully you can see why this tool is REALLY useful for building out a site. With this you have granular php/html control over each page, and you can also apply the same template to multiple pages if they are similar.  You're welcome.
+
+*************************************************************************************************
+004. STYLING - AN INTRO TO SASS
+*************************************************************************************************
+Ok, now the fun part. Or the miserable part, depending on who you are: styling! Personally, I hate CSS. And styling. I think everyone should just have a sensible government website where everything is presented in sensible rectagular gray blocks. And everyone should just be issued sensible government pants. But I digress. *Other* people seem to like to have styling options for their pages. 
+
+Coyote uses SASS. SASS and only SASS. I mean...I guess you *could* just ignore all of the styling architecture and hard code all of your css into style.css in /coyote/library/css but don't do that. Use SASS. It is the bestest and super easy. I'm not going to provide a tutorial on how to use it, but a Bing search will turn up tons of good articles on using SASS.
+
+What I *will* help out with is compiling. Basically, you need something to read the SASS you write, munch it up, and puke out css into the standard style.css file that you can then upload. Despite what you might read elsewhere DO NOT try to set up server-side compiling unless you're handy with consoles and nodes and shells and fizwidgets and gloobleboxes and the like.  If you're not, setting up remote compiling is a huge pain in the peen.  Instead, just download any one of a billion compilings applications.
+
+I suggest Koala:
+
+http://koala-app.com/
+
+but any one will do.  They all function about the same: just tell it the "input" path for the SASS (/coyote/library/scss/style.scss), and the output path for the css (/coyote/library/css/style.css) and whenever you save any of your partials it *should* automatically compile style.css for you.  Word of warning, koala tries to automatically detect your input and output path and it gets it wrong a lot of the time. If you use koala, after you make the project, just double check that style.scss in the scss folder is pointing to style.css in the css folder.
+
+
+************************************************************************************************
+005. COYOTE SASS STRUCTURE
+************************************************************************************************
+Alright, so now that you have a compiler up and running and know how to use SASS, here is the Coyote SASS structure. You don't *have* to use this structure, and nothing will break if don't follow these conventions, but it really helps.  Trust me.  It might seem annoying at first, but it will be helpful down the line. If you DO decide to change the structure just make sure that you update style.scss to reflect any changes. Like if you change the name of the _accordion partial to _donkeybutts make sure you go change all calls to _accordion in style.scss to _donkeybutts too, or else your stuff won't compile correctly. So here ya go:
+
+Breakpoints folder:
+
+Despite all the buzzy buzz out there about "mobile first" design we have found though experience that while great in theory, and for simple sites, it is a huge clustercluck in practice if you're building anything complicated. We tend to build graphically intensive desktop sites that involve a lot of...weird stuff.  It is just not practical to build "up" from a mobile layout if the entire concept of the site was built around the 12-act, VR, lobster-only, animated, remake of the Godfather on desktop. So with that in mind Coyote is build "top down." You can either jump on our design bandwagon, or simply reverse the at media queries in style.scss and you can switch things around to "mobile first." Just flip the 'max-width' for 'min-width' and you'll have 'mobile first' theme and you can feel cool about yourself.  With that disclaimer out of the way, here are your partials in the breakpoint folder:
+
+_all.scss: This is the partial for general styles that you want to apply across ALL breakpoints and ALL pages. Get it? Stuff like body text color. Or sidebar styles. Or moose size. If its only good for a particular width range or a particular page DON'T put it here. All is for all.
+
+_1030down.scss: This is for ALL styles that you want to apply to 1030px and thinner.  Like, ALL styles. All your pages, all your modules (buttons, tabs, forms, etc.). Like ANYTHING.  I know might seem counter-intuative, but after much thought I think this is the best way to organize things.  You really *shouldn't* have a ton of styling that is breakpoint specific. A tweak here, a dropped font size there...it has proven to be easiest to keep ALL breakpoint styles in their associated breakpoint partials. It also lowers the amount of @media queries floating around in your partials to exactly 0, which is a good thing for organization and readability.
+
+_768down.scss: Same as above, but for 768 px. This includes tablets.
+
+_481down.scss: Same as above, but for 768 px. This includes mobile.
+
+_2x.scss: If you want to make some super special code specific to retina displays stick it here.
+
+If you need to add a breakpoint you can. Just name it the same way: _name.scss and then add it into style.scss. Just follow the format for importing a breakpoint partial that already exists in that file.
+
+Modules Folder:
+
+This is where partial for "modules" live. Think of modules as...modules. They're things like buttons and forms and tabs and stuff. You get the idea. Discrete tools that you can plug in to any page, where it makes organizational sense to keep their styling separate and readily accessible. Right now you've got: accordion, buttons, comments, forms, grid, posts, and tabs. Put the approprate styles in the approprate partial. Make more as you need.
+
+Pages Folder:
+
+Here is where you're going to make a partial for each page of your site. Seriously, do this. It will help so much with organization. Remember, these are partials to establish BASELINE (i.e. desktop) styles for each of the page that will apply across ALL breakpoints unless over-ridden. Breakpoint specific styles should always go in the associated breakpoint partial. This keeps things organized. So, just make a new partial for each page (_pagename.scss), and import the new partial in style.scss, just like the rest of the partials already in there.
+
+Sassy Folder:
+
+Sassy! Yeah! This is where you sassy stuff goes. As in SASS functions and variables. Not lingerie. I mean...you can put that in here too. I don't judge. Buy yeah, the intent was to put all of that sassy stuff in here: mixins, functions, variables, etc. Again, not gonna do a whole SASS tutorials, but go read up on how to use mixins, functions, variables and the like, and put the approprate code in the appropriate partial. BTW normalize is a Bones holdover and smooths out some vendor styling issues, and print applies some styles for people who want to print your page (heathens) so just leave those be.
+
+Fonts: 
+
+I'm going to go into a little more detail on this one since you're probably going to want to change up the fonts. You're DEFINITELY going to want to change the fonts. So, with SASS you want to set up your fonts as variables. Thus, all of your fonts are in the variables.scss partial to keep things orgainzed. Go to that partial and read the comments for exact instructions. I outline how to embed both local and remote fonts, and give you a starter font. It is just easier to go read it in the partial because I give you the dummy code right there, and it won't translate well to a txt document. Once you embed your fonts, make a variable to match. You can call your font with a name in quotes, so to make the variable you're going to do something like: $body-font: 'my embeded font name' You can then use the variable $body-font in your .scss partials as you would any other variable. So something like .potato {font-family: $body-font}
+
+*************************************************************************************************
+006. TOOLS
+*************************************************************************************************
+Ok, now for the REALLY fun part: all the fun toys I built into this thing for you.  I've made SUPER lightweight and streamlined versions of some tools that we tend to use frequently in our work. When I say SUPER lightweight I mean like...basic functionality and nothing else.  Keeping with the design philisopny of Coyote, these are supposed to be streamlined bases that allow you maximum flexibility to customize without having to fight width bloat-code. I will be adding additional tools and functionalities when I feel like it. 
+
+*************************************************************************************************
+007. GUTTERS
+*************************************************************************************************
+You can has responsive gutter system. Apply it to any element by adding the class ".gutters". To adjust the parameters of .gutters, go tweak the css in the GUTTERS section of _all.scss
+
+
+************************************************************************************************
+008. GRIDS
+************************************************************************************************
+You can has responsive, pure css grid system. To make a grid, first make a div and give it the class ".grid-container"
+
+Next, give it a class that sets how many columns in your grid. If you want three columns, add the class "three-column" to the container. You can pick anything from two to twelve.
+
+Next, deside how you want your grid to behave on tablet and mobile. If you don't want it to change, do nothing. If you want it to switch to one or two column on tablet, add the class ".tablet-single-column" or ".tablet-two-column". Same for mobile. Just add the class ".mobile-single-column" or ".mobile-two-column" if you want a change for mobile.
+
+Lastly just add the class ".grid-item" to anything you want to put in your grid.
+
+Super easy right?
+
+So in the end, your html would look like this:
+
+<div class='grid-container four-column tablet-two-column mobile-single-column'>
+
+	<div class='grid-item'>
+		<p>gremlin</p>
+	</div>
+
+	<div class='grid-item'>
+		<p>gremlin</p>
+	</div>
+
+	<div class='grid-item'>
+		<p>gremlin</p>
+	</div>
+
+	<div class='grid-item'>
+		<p>gremlin</p>
+	</div>
+</div>
+
+and that would automatically make a four column grid of gremlins that switches to two columns for tablet and one column for mobile. Gremlin. If you want to tweak the code it is in _grid.scss.
+
+
+*************************************************************************************************
+009. TABS
+*************************************************************************************************
+You can has vertical and horizontal tabs. 
+
+To make horizontal tabs just follow this HTML template (you have to apply these class names):
+
+<div class='horizontal-tabs'>
+
+	<div class='tab-title-container'>
+
+		<div class='tab'>
+			<p>Tab Title</p>
+		</div>
+
+		<div class='tab'>
+			<p>Tab Title</p>
+		</div>
+
+		<div class='tab'>
+			<p>Tab Title</p>
+		</div>
+
+		<div class='tab'>
+			<p>Tab Title</p>
+		</div>
+
+	</div>
+
+	<div class='tab-content-window'>
+
+		<div class='tab-content'>
+			<p>Tab Content 1</p>
+		</div>
+
+		<div class='tab-content'>
+			<p>Tab Content 2</p>
+		</div>
+
+		<div class='tab-content'>
+			<p>Tab Content 3</p>
+		</div>
+
+		<div class='tab-content'>
+			<p>Tab Content 4</p>
+		</div>
+		
+	</div>
+
+</div>
+
+If you want to make vertical tabs, just switch the class "horizontal-tabs" on the outer container for the class "vertical-tabs". Do NOT apply both classes or you will rip a hole in the space-time continuum. Seriously. Its like crossing steams in Ghostbusters. So...I guess only do it if you're fighting a demon.
+
+Feel free to swap out the <p> elements in the titles and content sections for whatever you want. Be carefull messing with the DOM *too* much or things will in all liklihood break.
+
+Style your tabs in the _tabs.scss module and edit the yava in the tabs.js script.
+
+*************************************************************************************************
+0010. ACCORDIONS
+*************************************************************************************************
+Make an accordion by using this template:
+
+<div class='accordion-container'>
+
+	<div class='accordion-section'>
+		<p>Title</p>
+		<div class='accordion-content'>
+			<p>Content</p>
+		</div>
+	</div>
+
+	<div class='accordion-section'>
+		<p>Title</p>
+		<div class='accordion-content'>
+			<p>Content</p>
+		</div>
+	</div>
+
+	<div class='accordion-section'>
+		<p>Title</p>
+		<div class='accordion-content'>
+			<p>Content</p>
+		</div>
+	</div>
+
+</div>
+
+Same as above, swap out the <p> elements with whatever you want. Default behavior is sections start closed and opening one section closes the other. Because that's how accoridions should work. I might add variations on that down the line though. 
+
+Style your tabs in the _accoridion.scss module and edit the yava in the accordion.js script.
+
+*************************************************************************************************
+0011. PARALLAX
+*************************************************************************************************
+
+You've got three layers of paralaxing built in to your theme!
+
+How cool is that! Aren't you lucky.
+
+To use your parallax feature just apply the class "parallax-top" to your top layer, "parallax-slow" to your slower moving background layer, and "parallax-fast" to your faster moving background layer.
+
+Give the massive variety of situations in which you might want to use this tool, I leave it to you to actually create your content layers, and stack them on top of each other. If I can think of a good css framework for a basic layering tool that will apply to a wide number of use cases I'll add one in later.
+
+***********************************************************************************************
+0012. YAVA TOOLS
+***********************************************************************************************
+Coyote comes pre-packed with two of the BEST yava tools out there: GSAP and Scroll Magic. Like, these things are freaking AWESOME. GSAP is an animation platform that is the straight up best of the best. You should use it for ALL you animations. It actually has better performance than CSS animations (of course for a simple little hover effect css is fine, but for any significat animations you should be using GSAP.). I'm not going to explain how to use it, but they have GREAT documenation. Go check out:
+
+https://greensock.com/get-started-js
+
+peruse their documenation, and generally browse around. I think you'll be really excited when you can see what GSAP can do. The core functionality (TweenMax) is already packed into Coyote, so once you run through the tutorial, you're already good to go.
+
+Next is Scroll Magic, which is equally awesome. It allows you to control the timeline of GSAP animations with your scroll wheel. It allows you to make some really amazing stuff. Sadly, their documentation is...less good. But it is worth it to hack through it. Check it out at:
+
+http://scrollmagic.io/
+
+Again, Scroll Magic is primed and ready to go with Coyote, so once you learn the syntax, get to making magic. Oh. One thing. Debug mode is currently active, so when you make scroll magic scenes you can visually see where triggers are. That will all make sense when you go learn scroll magic. Point being, when you're ready to deploy your site, un-enqueue the scroll magic debug script.
+
+***************************************************************************************************
+0013. CUSTOM YAVA
+***************************************************************************************************
+Write your weird code in scripts.js found at /coyote/library/js/scripts.js
+
+I made a nice little section in that file for you. You'll see it pookie. 
+
+If you want to create a separate script, do so, put it in the /coyote/library/js folder, and then register and enqueue it in the coyote.php file found at /coyote/library/coyote.php
+
+A note about coyote.php. That's your "core" file so be careful when you're messing with it. It includes a lot of necessary stuff to get the theme up and running. You're main use for it will be for registering and enqueueing new scripts and stylesheets. If you don't know how to do that, just copy the syntax you see in coyote.php in Scripts & Enqueueing section about halfway down. Remember you need to both register AND enqueue a script. In that section you should see where a bunch of scripts are registered and then a block below that where the same scripts are enqueued. Yeah. Do that.
+
+**************************************************************************************************
+0014. SUPPORT
+**************************************************************************************************
+
+Ok, yeah. So support. We just don't have the bandwith to really do it. We actively work on daily basis as web devs. This is the theme *we* use for our builds, and we're putting it out there cause we thought some other devs out there might find it useful give the paucity of "blank" themes out there, but we simply don't have the time to actively support the theme.
+
+That being said, please go ahead and email coyotetheme@gmail.com if you have comments or questions (especially positive ones) and I will do my level best to respond...when I feel like it. Honestly, don't be surprised if you don't hear back. We're kind of just throwing this one out into the wild. If you DO like coyote, though, please drop a line and let us know. If there's a large positive response, it would certainly encourage more active theme development.
+
+Regardless, we will continue to update Coyote as we add tools, functionalites, and squash bugs, so check back occasionaly if you like the theme.
+
+**************************************************************************************************
+0015. CREDITS/COPYRIGHT
+**************************************************************************************************
+
+I want to give one more credit to Eddie Machado and Bones. Coyote is 100% a custom Bones package, and would not exist without his work, 99% of which remains as the functional code of Coyote. Go check out the Bones webpage at: 
+
+http://themble.com/bones/
+
+and give him monies! Seriously amazing work on his part. If Coyote is *too* stripped down for you, I highly recommend using Bones.
+
+Credit for the cute coyote girl image goes to ???
+
+I seriously tried to track down the artist to give them due credit, and came up blank. Looks like it just pops up a lot when you search for...well...never mind what I searched for. Looks like there is a signature for "kaitycuddle" on the bottom of some copies, so...credit goes to kaitycuddle I guess. 
+
+As for Coyote, we're paying it forward as Bones did before. Use Coyote to your hearts content for whatever you want and edit as you see fit. If you do make modifications please change the name, so we are not associated with work we did not create. Otherwise, she's all yours.

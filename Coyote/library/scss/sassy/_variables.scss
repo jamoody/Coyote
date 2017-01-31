@@ -1,0 +1,70 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Variables
+
+Put your variables here.  That includes fonts.
+
+Use the two tier varaible system for maximum flexibility.
+In short, define a color variable, with a hex code, and then define a property varaible using your color variable.
+This allows for maximum flexibility down the line.  It allows you to both replace all instances of a color in one line
+or change one properties color without effecting anything else.
+
+*******************************************************************/
+
+
+/***************************************************************************
+COLOR DEFINITIONS
+****************************************************************************/
+$black:             #000000;
+$white:				#ffffff;
+$gray:				#a9a9a9;	
+$light-gray:		#d3d3d3;
+
+/**********************************************************************
+PROPERTY DEFINITIONS
+***********************************************************************/
+
+$body-text-color:			$black;
+$comment-color:				$light-gray;
+$background-color:			$white;
+$link-color:				$black;
+$link-hover:				$black;
+$footer-background-color: 	$black;
+$light-body-text:			$white;
+
+/**************************************************************************
+FONT EMBEDS
+***************************************************************************/
+/* Google fonts method: go to google fonts, select a font, open your selection window, click the '@import' tab, and copy the code here.
+I've started you out with one font. I like it. Maybe you do to. Maybe you change it. Count your blessings, because I almost made comic sans the default font. It is like the rickroll of fonts. BOOM. You got comic sans-ed. I shoulda done in. Sigh.*/
+
+@import url('https://fonts.googleapis.com/css?family=News+Cycle');
+
+
+/*
+If you want to embed locally hosted fonts, use the syntax below. You need the actual font files corresponding to 
+the file formats called below. Drop those into /library/fonts, copy the code chunk below (without the comments, lunchbox), 
+and you should be off to the races. The font races. Much excitement.
+*/
+
+/*  @font-face {
+      font-family: 'Font Name';
+      src: url('library/fonts/font-name.eot');
+      src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
+             url('library/fonts/font-name.woff') format('woff'),
+             url('library/fonts/font-name.ttf') format('truetype'),
+             url('library/fonts/font-name.svg#font-name') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+*/
+
+
+/****************************************************************************
+FONT VARIABLES
+******************************************************************************/
+$sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+$body-font:        'News Cycle', $sans-serif;

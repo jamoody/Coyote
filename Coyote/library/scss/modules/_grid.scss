@@ -1,0 +1,131 @@
+/****************************************
+Aight this is your fancy new grid system.
+Whiiiiiiiiiich is basically a flexbox. Instructions on how to use it are in the...instructions.
+I will be adding addional gridding options in the near future.
+Put any additional grid styles here!
+****************************************/
+
+.grid-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+
+.grid-item {
+	
+}
+
+.two-column {
+	
+	.grid-item {
+		width: 50%;
+	}
+}
+
+.three-column {
+	
+	.grid-item {
+		width: 33.33%;
+	}
+}
+
+.four-column {
+	
+	.grid-item {
+		width: 25%;
+	}
+}
+
+.five-column {
+	.grid-item {
+		width: 20%;
+	}
+}
+
+.six-column {
+	
+	.grid-item {
+		width: 16.66%;
+	}
+}
+
+.seven-column {
+	
+	.grid-item {
+		width: 14.28%;
+	}
+}
+
+.eight-column {
+	
+	.grid-item {
+		width: 12.5%;
+	}
+}
+
+.nine-column {
+	
+	.grid-item {
+		width: 11.11%;
+	}
+}
+
+.ten-column {
+	
+	.grid-item {
+		width: 10%;
+	}
+}
+
+.eleven-column {
+	
+	.grid-item {
+		width: 9%;
+	}
+}
+
+.twelve-column {
+	
+	.grid-item {
+		width: 8.33%;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	
+	.tablet-single-column {
+		display: block;
+		
+		.grid-item {
+			width: 100%;
+		}
+	}
+	
+	.tablet-two-column {
+		display: block;
+		
+		.grid-item {
+			width: 500%;
+		}
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	
+	.mobile-single-column {
+		display: block;
+		
+		.grid-item {
+			width: 100%;
+		}
+	}
+	
+	.mobile-two-column {
+		display: block;
+		
+		.grid-item {
+			width: 500%;
+		}
+	}
+}

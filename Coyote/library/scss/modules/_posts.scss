@@ -1,0 +1,85 @@
+.single-title,
+		.page-title,
+		.entry-title {
+			margin: 0;
+		}
+
+		.single-title {}
+
+		.page-title {}
+
+		.entry-title {}
+
+		.archive-title {}
+
+		
+		.post-id {}         /* post by id (i.e. post-3) */
+		.post {}            /* general post style */
+		.page {}            /* general article on a page style */
+		.attachment {}      /* general style on an attatchment */
+		.sticky {}          /* sticky post style */
+		.hentry {}          /* hentry class */
+		.category-slug {}   /* style by category (i.e. category-videos) */
+		.tag-slug {}        /* style by tag (i.e. tag-news) */
+
+		/* post meta */
+		.byline {
+			color: $black;
+			font-style: italic;
+			margin: 0;
+
+			time {}
+		}
+
+		
+
+		.wp-caption {
+			max-width: 100%;
+			background: #eee;
+			padding: 5px;
+
+			/* images inside wp-caption */
+			img {
+				max-width: 100%;
+				margin-bottom: 0;
+				width: 100%;
+			}
+
+			p.wp-caption-text {
+				font-size: 0.85em;
+				margin: 4px 0 7px;
+				text-align: center;
+			}
+
+		} /* end .wp-caption */
+
+		/* image gallery styles */
+		.gallery {
+
+			dl {
+
+				a {}
+
+				img {}
+
+			}
+
+			dt {}
+
+			dd {}
+
+		} /* end .gallery */
+
+		/* gallery caption styles */
+		.gallery-caption {}
+
+		.size-full {}
+		.size-large {}
+		.size-medium {}
+		.size-thumbnail {}
+
+	// the tag output
+	.tags {
+		margin: 0;
+	}
+

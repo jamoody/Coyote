@@ -1,0 +1,49 @@
+/****************************************************************
+Here you got your tab styles. 
+Instructions on how to use the tab system are in the instructions.
+The styles you see before you are the very most basic rules that 
+make the tabs functions. Otherwise the tabs are completely unstyled.
+They are a blank slate to do with as you please.  It is a big responsibility.
+Try not to make them look dumb.
+********************************************************************/
+
+.vertical-tabs {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	.tab-title-container {
+		width: 50%;
+	}
+	.tab-content-window {
+		width: 49%;
+	}
+	
+	.tab-content {
+		display:none;
+		
+		&.active-content {
+			display:block;
+		}
+	}
+}
+
+.horizontal-tabs {
+	display: flex;
+	flex-wrap: wrap;
+	.tab-title-container {
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+	}
+	.tab-content-window {
+		width: 100%;
+	}
+	
+	.tab-content {
+		display:none;
+		
+		&.active-content {
+			display:block;
+		}
+	}
+}

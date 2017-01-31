@@ -1,0 +1,138 @@
+
+
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Main Stylesheet
+
+Helpful articles on Sass file organization:
+http://thesassway.com/advanced/modular-css-naming-conventions
+
+******************************************************************/
+
+/*********************
+IMPORTING SASSY PARTIALS
+
+Make sure to import these FIRST so all your sassy variables get loaded in
+
+*********************/
+
+// normalize: http://necolas.github.io/normalize.css/
+@import "sassy/normalize";
+
+// Sass variables
+@import "sassy/variables";
+
+// Sass functions
+@import "sassy/functions";
+
+// import mixins
+@import "sassy/mixins";
+
+/*********************
+IMPORTING PAGES
+
+*********************/
+// Import your page partials by doing a @import 'pages/yourpage';
+//Remember to name your page partials _yourpage.scss
+
+/*********************
+IMPORTING MODULES
+
+*********************/
+// tabs
+@import "modules/tabs";
+
+// accordion
+@import "modules/accordion";
+
+// grid
+@import "modules/grid";
+
+// buttons
+@import "modules/buttons";
+
+// forms (inputs & labels)
+@import "modules/forms";
+
+// posts (inputs & labels)
+@import "modules/posts";
+
+//comments
+@import "modules/comments";
+
+
+/*********************
+All Breakpoint Styles - These apply to ALL breakpoints unless over-ridden
+*********************/
+
+// styles in desktop.scss
+@import "breakpoints/all";
+
+
+/*********************
+1030 and DOWN
+These styles apply to all widths 1030px and DOWN unless over-ridden
+*********************/
+@media only screen and (max-width: 1030px) {
+
+	// styles in 1030down.scss
+	@import "breakpoints/1030down";
+
+} // end of media query
+
+
+
+/*********************
+768px and DOWN
+These styles apply to all widths 768px and DOWN unless over-ridden
+*********************/
+@media only screen and (max-width: 768px) {
+
+	// styles in 768down.scss
+	@import "breakpoints/768down";
+
+} // end of media query
+
+
+
+/*********************
+481 and DOWN
+These styles apply to all widths 481px and DOWN unless over-ridden
+*********************/
+@media only screen and (max-width: 481px) {
+
+	// styles in 481down.scss
+	@import "breakpoints/481down";
+
+} // end of media query
+
+
+/*********************
+RETINA (2x RESOLUTION DEVICES)
+This applies to the retina iPhone (4s) and iPad (2,3) along with
+other displays with a 2x resolution. You can also create a media
+query for retina AND a certain size if you want. Go Nuts.
+*********************/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min--moz-device-pixel-ratio: 1.5),
+       only screen and (min-device-pixel-ratio: 1.5) {
+
+	// styles in 2x.scss
+	@import "breakpoints/2x";
+
+} // end of media query
+
+/*********************
+PRINT STYLESHEET
+Feel free to customize this. Remember to add things that won't make
+sense to print at the bottom. Things like nav, ads, and forms should
+be set to display none.
+*********************/
+@media print {
+
+	// styles in print.scss
+	@import "sassy/print";
+
+}
